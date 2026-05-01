@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Instagram } from "lucide-react";
 import { profile } from "../../data/portfolioData";
 
 function SocialRail() {
@@ -13,6 +13,9 @@ function SocialRail() {
         </a>
         <a href={`mailto:${profile.email}`} className="rail-icon">
           <Mail size={16} />
+        </a>
+        <a href={profile.links.instagram} className="rail-icon">
+          <Instagram size={16} />
         </a>
         <span className="mt-1 h-16 w-px bg-white/20" />
       </div>

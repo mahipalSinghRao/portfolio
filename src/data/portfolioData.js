@@ -9,6 +9,7 @@ export const profile = {
   links: {
     github: "https://github.com/mahipalSinghRao",
     linkedin: "https://www.linkedin.com/in/mahipal-singh-barva-53a4b9b7/",
+    instagram: "https://www.instagram.com/mahipal_singhrao/",
     portfolio: "#"
   },
   summary:
@@ -19,7 +20,7 @@ export const navItems = ["home", "about", "projects", "skills", "experience", "c
 
 export const highlights = [
   { id: 1, label: "Experience", value: "2+ Years" },
-  { id: 2, label: "Repos", value: "40+ GitHub" },
+  { id: 2, label: "Repos", value: "60+ GitHub" },
   { id: 3, label: "Primary Stack", value: "React + Node" },
   { id: 4, label: "Core CS", value: "C++ + DSA" },
   { id: 5, label: "AI/Data", value: "Data Science" },
@@ -179,9 +180,9 @@ export const projects = [
 ];
 
 export const githubStats = [
-  { label: "Public Repos", value: "40+" },
+  { label: "Public Repos", value: "60+" },
   { label: "Primary Stack", value: "JavaScript / MERN" },
-  { label: "Focus", value: "Frontend + APIs" }
+  { label: "Focus", value: "Full Stack + Architecture" }
 ];
 
 export const pinnedRepos = [

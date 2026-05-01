@@ -14,9 +14,9 @@ function GithubSection() {
 
       <div className="mt-8 grid gap-4 md:grid-cols-3 backdrop-blur-[14px]">
         {githubStats.map((item) => (
-          <div key={item.label} className="terminal-card rounded-xl p-4 flex  items-center justify-around">
+          <div key={item.label} className="terminal-card rounded-xl p-4 max-md:flex items-center justify-around">
             <p className="text-xs uppercase tracking-[0.18em] text-white/55">{item.label}</p>
-            <p className="mt-2 text-lg font-semibold text-neon">{item.value}</p>
+            <p className="mt-2 text-lg max-md:text-base font-semibold text-neon">{item.value}</p>
           </div>
         ))}
       </div>
