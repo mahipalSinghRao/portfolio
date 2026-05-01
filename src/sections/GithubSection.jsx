@@ -9,19 +9,19 @@ function GithubSection() {
       <SectionHeading
         eyebrow="Open Source"
         title="GitHub Snapshot"
-        subtitle="Pinned repos and coding focus areas represented in a developer-first layout."
+        subtitle="Pinned repositories highlighting my core skills and development focus."
       />
 
-      <div className="mt-8 grid gap-4 md:grid-cols-3">
+      <div className="mt-8 grid gap-4 md:grid-cols-3 backdrop-blur-[14px]">
         {githubStats.map((item) => (
-          <div key={item.label} className="terminal-card rounded-xl p-4">
+          <div key={item.label} className="terminal-card rounded-xl p-4 flex  items-center justify-around">
             <p className="text-xs uppercase tracking-[0.18em] text-white/55">{item.label}</p>
             <p className="mt-2 text-lg font-semibold text-neon">{item.value}</p>
           </div>
         ))}
       </div>
 
-      <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3 backdrop-blur-[14px]">
         {pinnedRepos.map((repo, idx) => (
           <motion.a
             key={repo.name}

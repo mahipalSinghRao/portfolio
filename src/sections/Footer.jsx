@@ -18,7 +18,7 @@ function Footer() {
                 {/* Right (socials) */}
                 <div className="flex items-center gap-4">
                     <a
-                        href="https://github.com/"
+                        href="https://github.com/mahipalSinghRao/"
                         target="_blank"
                         rel="noreferrer"
                         className="text-white/70 hover:text-neon transition"
@@ -36,7 +36,7 @@ function Footer() {
                     </a>
 
                     <a
-                        href="mailto:your@email.com"
+                        href="mahipalsingh450@email.com"
                         className="text-white/70 hover:text-neon transition"
                     >
                         <Mail size={18} />

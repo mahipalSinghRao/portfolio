@@ -14,6 +14,8 @@ import ProjectsSection from "./sections/ProjectsSection";
 import SkillsSection from "./sections/SkillsSection";
 import { navItems } from "./data/portfolioData";
 import Footer from "./sections/Footer";
+import EducationSection from "./sections/EducationSection";
+import FloatingCodeGlobal from "./components/layout/FloatingCodeGlobal";
 
 function App() {
   const [activeId, setActiveId] = useState("home");
@@ -46,6 +48,7 @@ function App() {
 
   return (
     <div className="relative overflow-x-clip bg-grid-radial">
+      <FloatingCodeGlobal />
       <CustomCursor />
       <MouseReactiveFX />
       <div className="pointer-events-none absolute inset-0 code-grid opacity-30" />
@@ -78,6 +81,9 @@ function App() {
           </motion.div>
           <motion.div layout transition={{ type: "spring", stiffness: 120, damping: 20 }}>
             <ExperienceSection />
+          </motion.div>
+          <motion.div layout transition={{ type: "spring", stiffness: 120, damping: 20 }}>
+            <EducationSection />
           </motion.div>
           <motion.div layout transition={{ type: "spring", stiffness: 120, damping: 20 }}>
             <ContactSection />

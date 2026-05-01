@@ -1,49 +1,89 @@
-import { motion, useScroll, useSpring } from "framer-motion";
-import { BriefcaseBusiness } from "lucide-react";
+// import { motion, useAnimation } from "framer-motion";
+// import { useEffect } from "react";
+
+// function ExperienceSlider({ experience }) {
+//   const controls = useAnimation();
+
+//   useEffect(() => {
+//     controls.start({
+//       x: ["0%", "-50%"],
+//       transition: {
+//         duration: 25,
+//         ease: "linear",
+//         repeat: Infinity,
+//       },
+//     });
+//   }, []);
+
+//   return (
+//     <div className="relative overflow-hidden mt-12">
+
+//       {/* Fade edges */}
+//       <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#020617] to-transparent z-10" />
+//       <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#020617] to-transparent z-10" />
+
+//       <motion.div
+//         className="flex gap-6 w-max"
+//         animate={controls}
+
+//         onMouseEnter={() => controls.stop()}   // 🛑 pause
+//         onMouseLeave={() => {
+//           controls.start({
+//             x: ["0%", "-50%"],
+//             transition: {
+//               duration: 25,
+//               ease: "linear",
+//               repeat: Infinity,
+//             },
+//           });
+//         }} // ▶ resume
+//       >
+//         {[...experience, ...experience].map((job, idx) => (
+//           <motion.div
+//             key={idx}
+//             whileHover={{ y: -10, scale: 1.05 }}
+//             className="min-w-[320px] max-w-[320px] terminal-card rounded-2xl p-5 relative group"
+//           >
+//             {/* Glow */}
+//             <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 shadow-[0_0_35px_rgba(var(--neon-rgb),0.25)]" />
+
+//             <h3 className="text-lg font-semibold">{job.role}</h3>
+//             <p className="text-xs text-neon/80">{job.period}</p>
+//             <p className="text-sm text-white/60">{job.company}</p>
+
+//             <div className="mt-3 h-[1px] bg-white/10" />
+
+//             <ul className="mt-3 space-y-2 text-sm text-white/75">
+//               {job.points.slice(0, 3).map((point, i) => (
+//                 <li key={i} className="flex gap-2">
+//                   <span className="text-neon">▹</span>
+//                   {point}
+//                 </li>
+//               ))}
+//             </ul>
+//           </motion.div>
+//         ))}
+//       </motion.div>
+//     </div>
+//   );
+// }
+
+// export default ExperienceSlider;
+
 import SectionHeading from "../components/common/SectionHeading";
+import PremiumExperienceSlider from "../components/layout/PremiumExperienceSlider";
 import { experience } from "../data/portfolioData";
 
 function ExperienceSection() {
-  const { scrollYProgress } = useScroll();
-  const lineScale = useSpring(scrollYProgress, { stiffness: 110, damping: 24 });
-
   return (
-    <section id="experience" className="snap-section container-pad mt-24">
+    <section id="experience" className="container-pad mt-28 ">
       <SectionHeading
         eyebrow="Career"
-        title="Experience Timeline"
-        subtitle="Professional journey based on your resume roles and outcomes."
+        title="Experience"
+        subtitle="A journey through my experience, roles, and real-world contributions."
       />
-      <div className="relative mt-10 pl-8">
-        <motion.div
-          style={{ scaleY: lineScale, transformOrigin: "top" }}
-          className="absolute left-2 top-0 h-full w-[2px] bg-gradient-to-b from-neon via-accent to-transparent"
-        />
-        <div className="space-y-7">
-          {experience.map((job, idx) => (
-            <motion.article
-              key={job.role + job.company}
-              initial={{ opacity: 0, x: -18 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: idx * 0.08, duration: 0.45 }}
-              className="terminal-card relative rounded-2xl p-5"
-            >
-              <BriefcaseBusiness size={17} className="absolute -left-9 top-6 text-neon" />
-              <p className="text-xs uppercase tracking-[0.18em] text-neon/90">{job.period}</p>
-              <h3 className="mt-2 text-lg font-semibold">{job.role}</h3>
-              <p className="text-sm text-white/65">
-                {job.company} - {job.location}
-              </p>
-              <ul className="mt-3 space-y-2 text-sm text-white/75">
-                {job.points.map((point) => (
-                  <li key={point}>- {point}</li>
-                ))}
-              </ul>
-            </motion.article>
-          ))}
-        </div>
-      </div>
+
+      <PremiumExperienceSlider experience={experience} />
     </section>
   );
 }

@@ -183,38 +183,42 @@ h3 {
   background-size: 3px 3px;
 }
 
-.pro-card-article:hover {
-  animation: neonPulse 2s infinite alternate;
-  box-shadow: 0 0 25px rgba(var(--neon-rgb), 0.8),
-    0 0 60px rgba(var(--neon-rgb), 0.3);
-  border-color: rgba(var(--neon-rgb), 0.6);
-}
+
 
 .pro-tech {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* Project Card */
+/* When card is hovered → all tech badges light up with theme color */
 .pro-card-article:hover .pro-tech {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 0 12px rgba(var(--neon-rgb), 0.9);
+  border-color: rgba(var(--neon-rgb), 0.55);
+  background: rgba(var(--neon-rgb), 0.08);
+  color: rgb(var(--neon-rgb));
+  box-shadow: 0 0 10px rgba(var(--neon-rgb), 0.2);
+  transform: translateY(-1px);
+}
+.pro-tech {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, 
+              border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
 }
 
-.pro-card-article:hover .pro-tech:nth-child(1) {
-  transition-delay: 0.05s;
+.hero-highlights {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: default;
 }
 
-.pro-card-article:hover .pro-tech:nth-child(2) {
-  transition-delay: 0.1s;
+.hero-highlights:hover {
+  transform: translateY(-4px) scale(1.04);
+  border-color: rgba(var(--neon-rgb), 0.55);
+  box-shadow: 0 0 22px rgba(var(--neon-rgb), 0.25), 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-.pro-card-article:hover .pro-tech:nth-child(3) {
-  transition-delay: 0.15s;
+.hero-highlights:hover p:first-child {
+  text-shadow: 0 0 16px rgba(var(--neon-rgb), 0.8);
 }
 
-.pro-card-article:hover .pro-tech:nth-child(4) {
-  transition-delay: 0.2s;
-}
-
+/* Profile name */
 .shine-text {
   position: relative;
 
@@ -242,6 +246,10 @@ h3 {
   100% {
     background-position: 200% center;
   }
+
+  0% {
+    background-position: -0%;
+  }
 }
 
 @keyframes neonPulse {
@@ -255,7 +263,20 @@ h3 {
   }
 }
 
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
 
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.vscode-card:hover {
+  box-shadow: 0 0 25px rgba(var(--neon-rgb), 0.3);
+}
 
 @media (max-width: 768px) {
   .floating-code {
@@ -296,4 +317,31 @@ h3 {
 
 .translate-z-40 {
   transform: translateZ(40px);
+}
+
+
+/* 🔥 Gradient based on your theme */
+.animate-border-theme {
+  background: linear-gradient(120deg,
+      rgba(var(--neon-rgb), 0.2),
+      rgba(var(--neon-rgb), 0.8),
+      rgba(255, 255, 255, 0.2),
+      rgba(var(--neon-rgb), 0.6));
+  background-size: 300% 300%;
+  animation: borderMoveTheme 5s linear infinite;
+}
+
+/* 🔥 Movement */
+@keyframes borderMoveTheme {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }

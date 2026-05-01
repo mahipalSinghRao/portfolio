@@ -1,49 +1,79 @@
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useRef, useEffect } from "react";
 
 function ThreeDCard({ children, className = "" }) {
-  const rotateX = useMotionValue(0);
-  const rotateY = useMotionValue(0);
+  const cardRef = useRef(null);
+  const frame = useRef(null);
 
-  const springX = useSpring(rotateX, { stiffness: 150, damping: 15 });
-  const springY = useSpring(rotateY, { stiffness: 150, damping: 15 });
+  const state = useRef({
+    x: 0,
+    y: 0,
+    targetX: 0,
+    targetY: 0,
+  });
+
+  // 🔥 smooth animation loop (THIS is the real fix)
+  const animate = () => {
+    const s = state.current;
+
+    // lerp (smooth follow)
+    s.x += (s.targetX - s.x) * 0.08;
+    s.y += (s.targetY - s.y) * 0.08;
+
+    if (cardRef.current) {
+      cardRef.current.style.transform = `
+        rotateX(${s.x}deg)
+        rotateY(${s.y}deg)
+        scale(1.02)
+      `;
+    }
+
+    frame.current = requestAnimationFrame(animate);
+  };
+
+  useEffect(() => {
+    frame.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frame.current);
+  }, []);
 
   const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
+    const rect = cardRef.current.getBoundingClientRect();
 
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
 
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    rotateX.set(-(y - centerY) / 20); // smoother
-    rotateY.set((x - centerX) / 20);
+    state.current.targetX = py * -12;
+    state.current.targetY = px * 12;
   };
 
   const handleMouseLeave = () => {
-    rotateX.set(0);
-    rotateY.set(0);
+    state.current.targetX = 0;
+    state.current.targetY = 0;
+
+    if (cardRef.current) {
+      cardRef.current.style.transform = `
+        rotateX(0deg)
+        rotateY(0deg)
+        scale(1)
+      `;
+    }
   };
 
   return (
-    <motion.div
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        rotateX: springX,
-        rotateY: springY,
-        transformStyle: "preserve-3d",   // ✅ critical
-      }}
-      className={`relative rounded-2xl transition-all duration-300 ${className}`}
-    >
-      {/* Glare */}
-      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition" />
-
-      {/* Content */}
-      <div style={{ transformStyle: "preserve-3d" }}>
-        {children}
+    <div style={{ perspective: "1200px" }}>
+      <div
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className={`rounded-2xl transition-transform duration-10 will-change-transform ${className}`}
+        style={{
+          transformStyle: "preserve-3d",
+        }}
+      >
+        <div style={{ transform: "translateZ(30px)" }}>
+          {children}
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
