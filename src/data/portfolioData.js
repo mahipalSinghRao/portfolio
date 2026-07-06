@@ -1,7 +1,8 @@
 export const profile = {
   name: "Mahipal Singh",
   role: "Software Developer | MERN Engineer",
-  tagline:"Building scalable MERN applications with clean architecture, optimized performance, and real-world impact.",
+  tagline:
+    "Building scalable MERN applications with clean architecture, optimized performance, and real-world impact.",
   location: "Bhilwara, India",
   phone: "+91 80031 00827",
   email: "mahipalsingh450@gmail.com",
@@ -10,13 +11,20 @@ export const profile = {
     github: "https://github.com/mahipalSinghRao",
     linkedin: "https://www.linkedin.com/in/mahipal-singh-barva-53a4b9b7/",
     instagram: "https://www.instagram.com/mahipal_singhrao/",
-    portfolio: "#"
+    portfolio: "#",
   },
   summary:
-    "Backend-focused Full-Stack Developer specializing in React, Node.js, Express, and MongoDB. Strong foundation in C/C++, Data Structures & Algorithms, Python, and Tailwind CSS. I build performant, scalable, and user-centric web applications."
+    "Backend-focused Full-Stack Developer specializing in React, Node.js, Express, and MongoDB. Strong foundation in C/C++, Data Structures & Algorithms, Python, and Tailwind CSS. I build performant, scalable, and user-centric web applications.",
 };
 
-export const navItems = ["home", "about", "projects", "skills", "experience", "contact"];
+export const navItems = [
+  "home",
+  "about",
+  "projects",
+  "skills",
+  "experience",
+  "contact",
+];
 
 export const highlights = [
   { id: 1, label: "Experience", value: "2+ Years" },
@@ -25,7 +33,7 @@ export const highlights = [
   { id: 4, label: "Core CS", value: "C++ + DSA" },
   { id: 5, label: "AI/Data", value: "Data Science" },
   { id: 6, label: "AI", value: "AI&ML" },
-]
+];
 export const skills = [
   "React.js",
   "Next.js",
@@ -56,30 +64,30 @@ export const experience = [
     points: [
       "Deliver classroom and online training in JavaScript, C, C++, Python, PHP, and MERN.",
       "Mentor students on data structures, algorithms, and complete full-stack architecture.",
-      "Guide students through project development and deployment using MongoDB, Express, React, and Node."
-    ]
+      "Guide students through project development and deployment using MongoDB, Express, React, and Node.",
+    ],
   },
+  // {
+  //   period: "Oct 2024 - Feb 2025",
+  //   role: "Full Stack Developer",
+  //   company: "Avalon Tribe Infotech",
+  //   location: "Bhilwara, India",
+  //   points: [
+  //     "Built interactive React.js interfaces and improved maintainability through reusable components.",
+  //     "Reduced page load time by 25% with client-side optimization and frontend architecture improvements.",
+  //     "Improved backend reliability by 15% and increased MongoDB retrieval speed by 20%."
+  //   ]
+  // },
   {
-    period: "Oct 2024 - Feb 2025",
-    role: "Full Stack Developer",
-    company: "Avalon Tribe Infotech",
-    location: "Bhilwara, India",
-    points: [
-      "Built interactive React.js interfaces and improved maintainability through reusable components.",
-      "Reduced page load time by 25% with client-side optimization and frontend architecture improvements.",
-      "Improved backend reliability by 15% and increased MongoDB retrieval speed by 20%."
-    ]
-  },
-  {
-    period: "Jul 2023 - Feb 2024",
+    period: "Jul 2023 - January 2025",
     role: "Associate Software Developer",
     company: "Ansh Soft Tech Pvt. Ltd.",
     location: "Remote (Pune, India)",
     points: [
       "Developed responsive interfaces using React.js, JavaScript, HTML5, and CSS3.",
       "Built and maintained REST APIs using Node.js and Express.js.",
-      "Optimized database operations with MongoDB and MySQL for better performance."
-    ]
+      "Optimized database operations with MongoDB and MySQL for better performance.",
+    ],
   },
   {
     period: "April 2022 - June 2024",
@@ -88,11 +96,25 @@ export const experience = [
     location: "Bhilwara, India",
     points: [
       "Drive Personal/Business loan business through ICICI Bank branches Haandling 23 branches and 7+ team mamber Coordinate with product teams, credit & operations teams to ensure a smooth flow of the business",
-    ]
-  }
+    ],
+  },
 ];
 
 export const projects = [
+  {
+    title: "ShowTime AI – Production-Grade Movie Platform Backend",
+    period: "June 2026 — Ongoing",
+    description:
+      "Production-grade backend architecture for an AI-powered movie platform built with Node.js, Express.js, TypeScript, MongoDB, JWT Authentication, Role-Based Authorization, Zod Validation, and scalable layered architecture.",
+    stack: ["TypeScript", "Node.js", "Express", "MongoDB", "Zod",  "OpenAI API"],
+    highlights: [
+      "Production-grade backend architecture for an AI-powered movie platform built with Node.js, Express.js, TypeScript, MongoDB, JWT Authentication, Role-Based Authorization, Zod Validation, and scalable layered architecture.",
+    ],
+    links: {
+      live: "Working",
+      github: "https://github.com/mahipalSinghRao/showtime_ai",
+    },
+  },
   {
     title: "FevOff MERN Platform",
     period: "Mar 2024 — Apr 2024",
@@ -102,13 +124,13 @@ export const projects = [
     highlights: [
       "Admin + User dashboard architecture",
       "30% efficiency improvement",
-      "Optimized API & data flow"
+      "Optimized API & data flow",
     ],
     links: {
       live: "https://fevoff-admin.vercel.app/",
       live: "https://fevoff.vercel.app/",
-      github: "https://github.com/MahipalSinghBarva/Fevoff_MERNStack"
-    }
+      github: "https://github.com/MahipalSinghBarva/Fevoff_MERNStack",
+    },
   },
 
   {
@@ -120,12 +142,12 @@ export const projects = [
     highlights: [
       "Redux state management",
       "Optimized product & cart flow",
-      "Responsive UI system"
+      "Responsive UI system",
     ],
     links: {
       live: "https://olivia-estore.netlify.app/",
-      github: "https://github.com/MahipalSinghBarva/Olivia_EStore_MERN"
-    }
+      github: "https://github.com/MahipalSinghBarva/Olivia_EStore_MERN",
+    },
   },
 
   {
@@ -137,11 +159,11 @@ export const projects = [
     highlights: [
       "Dynamic content management",
       "Full CRUD system",
-      "Admin-controlled portfolio updates"
+      "Admin-controlled portfolio updates",
     ],
     links: {
-      github: "https://github.com/MahipalSinghBarva/admin_protfolio"
-    }
+      github: "https://github.com/MahipalSinghBarva/admin_protfolio",
+    },
   },
 
   {
@@ -153,12 +175,12 @@ export const projects = [
     highlights: [
       "20% engagement boost",
       "Efficient state management",
-      "Responsive design"
+      "Responsive design",
     ],
     links: {
       live: "https://my-showtime.netlify.app/",
-      github: "https://github.com/MahipalSinghBarva/showtime"
-    }
+      github: "https://github.com/MahipalSinghBarva/showtime",
+    },
   },
 
   {
@@ -170,40 +192,42 @@ export const projects = [
     highlights: [
       "Responsive layout system",
       "Component-based UI",
-      "Clean design architecture"
+      "Clean design architecture",
     ],
     links: {
       live: "https://youtubeclone-by-mahipalsingh.netlify.app/",
-      github: "https://github.com/MahipalSinghBarva/youtubeClone"
-    }
-  }
+      github: "https://github.com/MahipalSinghBarva/youtubeClone",
+    },
+  },
 ];
 
 export const githubStats = [
   { label: "Public Repos", value: "60+" },
   { label: "Primary Stack", value: "JavaScript / MERN" },
-  { label: "Focus", value: "Full Stack + Architecture" }
+  { label: "Focus", value: "Full Stack + Architecture" },
 ];
 
 export const pinnedRepos = [
   {
     name: "Fevoff_MERNStack",
-    description: "Admin and user-side MERN application for streamlined platform operations.",
+    description:
+      "Admin and user-side MERN application for streamlined platform operations.",
     stack: "React, Node.js, MongoDB",
-    url: "https://github.com/MahipalSinghBarva/Fevoff_MERNStack"
+    url: "https://github.com/MahipalSinghBarva/Fevoff_MERNStack",
   },
   {
     name: "Olivia_EStore_MERN",
-    description: "MERN e-commerce application with responsive UX and clean frontend flows.",
+    description:
+      "MERN e-commerce application with responsive UX and clean frontend flows.",
     stack: "React, Redux, Express",
-    url: "https://github.com/MahipalSinghBarva/Olivia_EStore_MERN"
+    url: "https://github.com/MahipalSinghBarva/Olivia_EStore_MERN",
   },
   {
     name: "admin_protfolio",
     description: "Admin dashboard to dynamically manage portfolio content.",
     stack: "React, Tailwind, Node.js",
-    url: "https://github.com/MahipalSinghBarva/admin_protfolio"
-  }
+    url: "https://github.com/MahipalSinghBarva/admin_protfolio",
+  },
 ];
 
 export const education = [
@@ -214,7 +238,7 @@ export const education = [
     duration: "Mar 2023 — Jun 2024",
     gpa: "70%",
     description:
-      "Completed an intensive MERN stack program covering HTML, CSS, JavaScript, React, Node.js, DBMS, and System Design. Built end-to-end web applications under expert mentorship."
+      "Completed an intensive MERN stack program covering HTML, CSS, JavaScript, React, Node.js, DBMS, and System Design. Built end-to-end web applications under expert mentorship.",
   },
   {
     degree: "Bachelor of Computer Application (BCA)",
@@ -223,7 +247,7 @@ export const education = [
     duration: "Jul 2012 — Jul 2015",
     gpa: "62%",
     description:
-      "Gained strong foundation in programming, system analysis, database management, and web development. Focus on C++ and Data Structures & Algorithms."
+      "Gained strong foundation in programming, system analysis, database management, and web development. Focus on C++ and Data Structures & Algorithms.",
   },
   {
     degree: "Master of Business Administration (MBA)",
@@ -232,6 +256,6 @@ export const education = [
     duration: "May 2015 — Jul 2017",
     gpa: "64%",
     description:
-      "Specialized in business management and finance with focus on strategic decision-making, financial analysis, and market trends."
-  }
+      "Specialized in business management and finance with focus on strategic decision-making, financial analysis, and market trends.",
+  },
 ];
